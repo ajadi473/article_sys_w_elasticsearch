@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         * FIFA, Just Cause, Apex Legend) 
         * with different versions from 2010 to 2020.
         */
-        $this->call(GameSeeder::class);
+        // $this->call(GameSeeder::class);
 
     }
 }
