@@ -128,7 +128,7 @@ Route::get('top-100', function() {
     $start = microtime(true);
     
     $games_per_day = App\Models\Games::distinct('name')
-                                    ->orderBy('game_play','desc')
+                                    ->orderBy('name','desc')
                                     ->select('name','version','game_play')
                                     ->get()
                                     ->take(100);
