@@ -35,6 +35,7 @@ class GameSeeder extends Seeder
             $game_name = $games[mt_rand(0,count($games) - 1)];
             \App\Models\Games::create([
                 'name' => $faker->name,
+                'game_play' => 0,
                 'version' => $games[$i] .' '. $faker->numberBetween($min=2010, $max=2020),
                 'date_added' => $faker->dateTimeThisYear($max = 'now', $timezone = 'Africa/Lagos'),
             ]);
