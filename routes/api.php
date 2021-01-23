@@ -51,14 +51,14 @@ Route::get('all-players', function() {
         'message' => 'Information pulled out successfully'
     ])->withHeaders([
         'Content-Type' => 'json',
-        'X-runtime' => $time,
+        'X-runtime' => $time.'secs',
     ]);
 });
 
 // fetch all games
 Route::get('all-games', function() {
     $start = microtime(true);
-    $games = App\Models\Games::all()->orderBy('date_added','asc')->get('version','date_added');
+    $games = App\Models\Games::orderBy('date_added','asc')->get('version','date_added');
     $time = microtime(true) - $start;
     return response()->json([
         'status' => 'success',
@@ -70,7 +70,7 @@ Route::get('all-games', function() {
         'message' => 'All games fetched successfully'
     ])->withHeaders([
         'Content-Type' => 'json',
-        'X-runtime' => $time,
+        'X-runtime' => $time.'secs',
     ]);
 });
 
@@ -97,7 +97,7 @@ Route::get('games-per-day', function() {
         'message' => 'All games fetched successfully'
     ])->withHeaders([
         'Content-Type' => 'json',
-        'X-runtime' => $time,
+        'X-runtime' => $time.'secs',
     ]);
 });
 
@@ -119,7 +119,7 @@ Route::get('games-with-range', function() {
         'message' => 'All games fetched successfully'
     ])->withHeaders([
         'Content-Type' => 'json',
-        'X-runtime' => $time,
+        'X-runtime' => $time.'secs',
     ]);
 });
 
@@ -145,7 +145,7 @@ Route::get('top-100', function() {
         'message' => 'All games fetched successfully'
     ])->withHeaders([
         'Content-Type' => 'json',
-        'X-runtime' => $time,
+        'X-runtime' => $time.'secs',
     ]);
 });
 
