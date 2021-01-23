@@ -58,7 +58,7 @@ Route::get('all-players', function() {
 // fetch all games
 Route::get('all-games', function() {
     $start = microtime(true);
-    $games = App\Models\Games::distinct()->orderBy('date_added','asc')->get('version');
+    $games = App\Models\Games::distinct()->orderBy('date_added','asc')->get('version','date_added');
     $time = microtime(true) - $start;
     return response()->json([
         'status' => 'success',
