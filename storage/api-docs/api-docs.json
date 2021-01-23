@@ -14,7 +14,7 @@
     },
     "servers": [
         {
-            "url": "http://game-catalog-hmo-assessment.herokuapp.com/",
+            "url": "http://game-catalog-hmo-assessment.herokuapp.com/api",
             "description": "Demo API Server"
         }
     ],
