@@ -43,12 +43,12 @@ class PlayerSeeder extends Seeder
             ]);
 
 
-            for($i = 0; $i < 4; $i++){
+            for($j = 0; $j < 4; $j++){
                 $vers = $versions[mt_rand(0,count($versions) - 1)];
                 $game_name = $games[mt_rand(0,count($games) - 1)];
                 \App\Models\Games::create([
                     'name' => $name,
-                    'version' => $games[$i] .' '. $faker->numberBetween($min=2010, $max=2020),
+                    'version' => $games[$j] .' '. $faker->numberBetween($min=2010, $max=2020),
                     'game_play' => $faker->numberBetween($min=0, $max=4),
                     'date_added' => $faker->dateTimeThisYear('+3 years', $timezone = 'Africa/Lagos'),
                 ]);
