@@ -17,7 +17,7 @@ class Games extends Migration
             $table->id();
             $table->string('name');
             $table->string('version', 50)->comment('Version of the game');
-            $table->integer('game_play')->comment('Number of times game is played');
+            $table->integer('game_play')->comment('Number of times game is played')->nullable();
             $table->date('date_added', $precision = 0);
             $table->timestamps();
         });
