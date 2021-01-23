@@ -38,7 +38,7 @@ Route::get('all-players', function() {
     $players = DB::table('games')
             ->select('name', 'version','game_play')
             ->where('game_play', '>', 0)
-            ->get()->take(10);
+            ->get();
 
     $time = microtime(true) - $start;
     return response()->json([
@@ -85,8 +85,7 @@ Route::get('games-per-day', function() {
     $games_per_day = App\Models\Games::distinct('date_added')
                                     ->orderBy('date_added','asc')
                                     ->select('name','date_added')
-                                    ->get()
-                                    ->take(10);
+                                    ->get();
     $time = microtime(true) - $start;
     return response()->json([
         'status' => 'success',
@@ -108,8 +107,7 @@ Route::get('games-with-range', function() {
     $games_per_day = App\Models\Games::where('created_at', '>',Carbon::now()->subDays(5))
                                     ->orderBy('date_added','asc')
                                     ->select('name','date_added')
-                                    ->get()
-                                    ->take(10);
+                                    ->get();
     $time = microtime(true) - $start;
     return response()->json([
         'status' => 'success',
