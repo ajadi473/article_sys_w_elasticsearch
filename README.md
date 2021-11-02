@@ -28,4 +28,4 @@
 
 3. Assumption 2: Players can only play together if they have the same game versions: Mortal Combat 4 players can not play together with Mortal Combat 5 player.
 
-4. With the assumptions, I ran a seeder file to generate 10,000 players and for each player a nested loop was written to generate random games, game versions and game plays for a maximum of 4 games per player.
+4. With the assumptions, I ran a seeder file to generate 10,000 players and for each player a nested loop was written to generate random games, game versions and game plays for a maximum of 4 games per player.# article_sys_w_elasticsearch

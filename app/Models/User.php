@@ -39,6 +39,24 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        
+
     ];
+
+    public function profile()
+    {
+        return $this->hasOne(profile::class, 'user_id');
+
+    }
+
+    public function coupon_plan()
+    {
+        return $this->hasOne(coupon::class, 'user_id');
+
+    }
+
+    public function cash_out()
+    {
+        return $this->hasOne(CashOut::class, 'user_id');
+
+    }
 }
