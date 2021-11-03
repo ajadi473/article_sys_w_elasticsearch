@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Articles\SearchRepository;
+use App\Articles\EloquentSearchRepository;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(SearchRepository::class, EloquentSearchRepository::class);
     }
 
     /**

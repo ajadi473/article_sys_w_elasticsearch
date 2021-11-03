@@ -1,3 +1,7 @@
+# composer require laravel/sail --dev
+# alias sail='bash vendor/bin/sail'
+# ./vendor/bin/sail up
+# sail composer require elasticsearch/elasticsearch
 /node_modules
 /public/hot
 /public/storage

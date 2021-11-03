@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,13 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Article::factory()->times(100)->create();
         /**
         * TODO:
         * 
         * Create 10,000 players in the system.
         */
         // \App\Models\User::factory(10)->create();
-        $this->call(PlayerSeeder::class);
+        // $this->call(PlayerSeeder::class);
 
         /**
         * TODO:

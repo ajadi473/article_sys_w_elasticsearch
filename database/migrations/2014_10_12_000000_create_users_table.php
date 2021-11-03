@@ -17,10 +17,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('nickname')->comment('The nickname of the player');
+            $table->string('nickname')->comment('The nickname of the player')->nullable();
             // this will be used for date_joined
             $table->timestamps();
-            $table->time('last_login', $precision = 0);
             //
             // $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
