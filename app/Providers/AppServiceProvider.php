@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use App\Articles\SearchRepository;
-use App\Articles\EloquentSearchRepository;
+use App\Repository\Eloquent\SearchRepository;
+use App\Repository\Eloquent\EloquentSearchRepository;
+use App\Articles;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Articles;
+namespace App\Repository\Eloquent;
 
 use App\Models\Article;
 use Illuminate\Database\Eloquent\Collection;
@@ -11,8 +11,8 @@ class EloquentSearchRepository implements SearchRepository
     {
         return Article::query()
                 ->where(fn ($query) => (
-                    $query->where('body', 'LIKE', "%{$term}%")
-                            ->orWhere('title', 'LIKE', '%{term}%')
+                    $query->where('title', 'LIKE', '%{term}%')
+                            ->orWhere('body', 'LIKE', "%{$term}%")
                 ))->get();
     }
 

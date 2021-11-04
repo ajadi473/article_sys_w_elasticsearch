@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Articles;
+namespace App\Repository\Eloquent;
 
 use Illuminate\Database\Eloquent\Collection;
 

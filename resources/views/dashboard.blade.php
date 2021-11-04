@@ -9,27 +9,45 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    @forelse ($articles as $article)
-                        <article class="space-y-1">
-                            <h2 class="font-semibold text-2xl">
-                                {{ $article->title }}
-                            </h2>
+                    <form action="{{ route('dashboard') }}" method="get" class="">
+                        <div class="form-group">
+                            <x-input type="text" 
+                                name="q"
+                                class="form-control"
+                                placeholder="Search..."
+                                value=" {{ request('q') }}"
+                            ></x-input>
+                        </div>
+                    </form>
+                    
+                    @if (request()->has('q'))
+                         <p class="text-sm">Using search: <strong>"{{ request('q') }}"</strong>. 
+                         <a class="border-b border-indigo-800 text-indigo-800" href="{{ route('dashboard') }}">Clear filters</a></p>
+                    @endif
 
-                            <p class="">
-                                {{ $article->body }}
-                            </p>
+                    <div class="space-y-8">
+                        @forelse ($articles as $article)
+                            <article class="space-y-1">
+                                <h2 class="font-semibold text-2xl">
+                                    {{ $article->title }}
+                                </h2>
 
-                            <div>
-                                @foreach ($article->tags as $tag)
-                                    <span class="text-xs px-2 py-1 mx-1 rounded bg-indigo-50 text-indigo-500">
-                                        {{ $tag }}
-                                    </span>
-                                @endforeach
-                            </div>
-                        </article>
-                    @empty 
-                        <span>No articles found</span>
-                    @endforelse
+                                <p class="">
+                                    {{ $article->body }}
+                                </p>
+
+                                <div>
+                                    @foreach ($article->tags as $tag)
+                                        <span class="text-xs px-2 py-1 mx-1 rounded bg-indigo-50 text-indigo-500">
+                                            {{ $tag }}
+                                        </span>
+                                    @endforeach
+                                </div>
+                            </article>
+                        @empty 
+                            <span>No articles found</span>
+                        @endforelse
+                    </div>
                 </div>
             </div>
         </div>
